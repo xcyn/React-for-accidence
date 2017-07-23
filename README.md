@@ -10,7 +10,7 @@ npm start (正常编译模式)
 npm run build (打包)
 
 ## 演示地址
-file:///C:/github/xcyn.github.io/production/React/index.html#/?_k=vvdxb1
+<a href="http://xcyn.github.io/production/React/index.html#/?_k=n56yj4">点击进入查看项目进度</a>
 
 ## 个人说明
 本项目适合react项目搭建的初学者
