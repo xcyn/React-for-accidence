@@ -9,6 +9,9 @@ react + react-router + redux + less + ES6/7 + webpack + fetch
 npm start (正常编译模式)
 npm run build (打包)
 
+## 演示地址
+file:///C:/github/xcyn.github.io/production/React/index.html#/?_k=vvdxb1
+
 ## 个人说明
 本项目适合react项目搭建的初学者
 如果觉得还行的话，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
