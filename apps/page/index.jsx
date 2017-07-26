@@ -6,6 +6,7 @@ import List from './list'
 import Detail from './detail'
 
 import './index.less'
+import rootReducer from './state/reducers/index'
 
 /**
  * 主页
@@ -37,4 +38,4 @@ class App extends React.Component {
   }
 }
   
-Entry(App, ()=>{})
+Entry(App, rootReducer)

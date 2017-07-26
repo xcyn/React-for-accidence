@@ -3,6 +3,8 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
+const rootpath = path.join(__dirname, '') //定义全局path
+
 module.exports = {
     entry: path.resolve(__dirname, 'apps/page/index.jsx'),
     output: {
@@ -10,7 +12,11 @@ module.exports = {
     },
 
     resolve: {
-        extensions:['', '.js','.jsx']
+        extensions:['', '.js','.jsx'],
+        // 定义别名
+        alias: {
+            'redux-common': path.resolve(rootpath, 'apps/util/redux-common'),
+        },
     },
 
     module: {

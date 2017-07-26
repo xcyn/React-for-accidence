@@ -4,7 +4,7 @@ import { render } from 'react-dom'
 import { storeFactory } from './util/redux-common'
 
 //入口扩展配置，便于后期多项目扩展 （可以通过webpack entry做可配置性）
-export default (App, RootReducer, Routes) => {
+export default (App, RootReducer) => {
     const store = storeFactory(RootReducer)
     class Entry extends React.Component {
         constructor(props) {
@@ -14,7 +14,7 @@ export default (App, RootReducer, Routes) => {
         // 页面顶部
         getHeader() {
             return (
-                <div style={{ marginTop: '20', marginBottom: '20' }} >
+                <div style={{ marginTop: '20px', marginBottom: '20px' }} >
                     我是顶部(后期扩展导航)
                 </div>
             )
@@ -23,7 +23,7 @@ export default (App, RootReducer, Routes) => {
         // 页面底部
         getFooter() {
             return (
-                <div style={{ marginTop: '20', marginBottom: '20' }} >
+                <div style={{ marginTop: '20px', marginBottom: '20px' }} >
                     我的footer部分！！
                 </div>
             )

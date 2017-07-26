@@ -12,7 +12,7 @@ export default class Detail extends React.Component {
   render () {
     return (
        <div>
-         <div style={{ marginTop: '20', marginBottom: '20' }} >
+         <div style={{ marginTop: '20px', marginBottom: '20px' }} >
            <a href="javascript:;">我是Detail页面！！我的页面参数为: { this.props.params.paramsId }</a>
          </div>
        </div>
