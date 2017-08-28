@@ -4,6 +4,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const rootpath = path.join(__dirname, '') //定义全局path
+
 module.exports = {
     entry: {
         app: path.resolve(__dirname, 'apps/page/index.jsx'),
@@ -16,7 +18,10 @@ module.exports = {
     },
 
     resolve:{
-        extensions:['', '.js','.jsx']
+        extensions:['', '.js','.jsx'],
+        alias: {
+            'redux-common': path.resolve(rootpath, 'apps/util/redux-common'),
+        },
     },
 
     module: {

@@ -4,6 +4,10 @@ import './index.less'
 import { connectFactory } from 'redux-common'
 import * as commonAction from '../state/actions/common.js'
 /**
+ * fetch数据
+ */
+import { getTestData, postTestDate, testMock } from '../../fetch/test.js'
+/**
  * 引入redux
  */
 @connectFactory(
@@ -22,6 +26,9 @@ import * as commonAction from '../state/actions/common.js'
 export default class Home extends React.Component {
   constructor () {
     super()
+    this.state = {
+      queryData: []
+    }
   }
 
   _changeRedux(){
@@ -34,10 +41,23 @@ export default class Home extends React.Component {
         'name':'小熊'
       })
     }
+  }
 
+  _getFetchDate(){
+    let { queryData } = this.state
+    testMock().then((data) => {
+      console.log('data', data)
+    })
+  }
+
+  _removeFetchDate(){
+    this.setState({
+      queryData: []
+    })
   }
 
   render () {
+    const { queryData } = this.state
     return (
        <div>
          <div style={{ marginTop: '20px', marginBottom: '20px' }} >
@@ -47,6 +67,19 @@ export default class Home extends React.Component {
            </div>
            <div>
              <span style={{ color: '#000', backgroundColor:'green' }} onClick={ this._changeRedux.bind(this) }>改变redux数据: 点击后为我最帅</span>
+           </div>
+           <div  style={{ marginTop: '20px', marginBottom: '20px' }} >
+             <span style={{ color: '#fff', backgroundColor:'blue' }} onClick={ this._getFetchDate.bind(this) }>点击fetch数据</span>
+           </div>
+           <div  style={{ marginTop: '20px', marginBottom: '20px' }} >
+             {
+               queryData.length > 0 ? <div>{ queryData.map((val, key) => {
+                 return <div key={ key }> { val.description } + { key } </div>
+               }) }</div> : <span>暂时没有数据</span>
+             }
+           </div>
+           <div  style={{ marginTop: '20px', marginBottom: '20px' }} >
+             <span style={{ color: '#fff', backgroundColor:'blue' }} onClick={ this._removeFetchDate.bind(this) }>清空fetch数据</span>
            </div>
          </div>
          <Link to="/list">点击跳转到列表页面</Link>
